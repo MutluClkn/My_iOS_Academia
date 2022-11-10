@@ -7,12 +7,15 @@
 
 import UIKit
 import PhotosUI
+import Firebase
+import FirebaseStorage
 
-class UploadViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PHPickerViewControllerDelegate {
+class UploadViewController: UIViewController, UINavigationControllerDelegate, PHPickerViewControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
     
+    let popUpMessage = ViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +53,33 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     // Button
     @IBAction func uploadButtonDidPress(_ sender: Any) {
+        
+        let storage = Storage.storage()
+        let storageReference = storage.reference()
+        
+        let mediaFolder = storageReference.child("media")
+        
+        if let data = imageView.image?.jpegData(compressionQuality: 0.5){
+            let uuid = UUID().uuidString
+            let imageReference = mediaFolder.child("\(uuid).jpg")
+            
+            imageReference.putData(data, metadata: nil) { (metadata, error) in
+                if error != nil {
+                    self.popUpMessage.popUpMessage(alertTitle: "Hata", alertMesssage: error?.localizedDescription ?? "Görsel yüklenemedi.")
+                }else{
+                    imageReference.downloadURL { url, error in
+                        if error == nil {
+                            let imageURL = url?.absoluteString
+                            print(imageURL as Any)
+                        }else {
+                            self.popUpMessage.popUpMessage(alertTitle: "Hata", alertMesssage: error?.localizedDescription ?? "Görsel indirilemedi.")
+                        }
+                    }
+                }
+            } // After this process, a fatal error occurs due to hangs at LoginAnimation section.
+             
+        }
+        
     }
     
 }

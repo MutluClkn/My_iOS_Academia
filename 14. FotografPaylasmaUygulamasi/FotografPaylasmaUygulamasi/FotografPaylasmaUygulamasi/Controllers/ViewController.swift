@@ -21,27 +21,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setupAnimation("LoginPage", loginAnimationView)
         
+        
+        
         // Keyboard Hide-Show Setup
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
-    // AnimationView Funcs
-    public func setupAnimation(_ name: String, _ animationViewName: LottieAnimationView){
-        animationViewName.animation = LottieAnimation.named(name)
-        animationViewName.backgroundColor = .systemBackground
-        animationViewName.contentMode = .scaleAspectFit
-        animationViewName.loopMode = .loop
-        animationViewName.play()
-    }
-    // Pop-Up Message Setup
-    func popUpMessage(alertTitle: String, alertMesssage: String) {
-        let alertController = UIAlertController(title: alertTitle, message: alertMesssage, preferredStyle: UIAlertController.Style.alert)
-        let alertAction = UIAlertAction(title: "Tamam", style: UIAlertAction.Style.default)
-        alertController.addAction(alertAction)
-        self.present(alertController, animated: true)
-    }
-    
     // Keyboard Funcs
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
@@ -90,6 +76,25 @@ class ViewController: UIViewController {
             popUpMessage(alertTitle: "Hata", alertMesssage: "Eksik bilgi girdiniz.")
         }
     }
+}
+extension ViewController {
+    // Pop-Up Message Setup
+    public func popUpMessage(alertTitle: String, alertMesssage: String) {
+        let alertController = UIAlertController(title: alertTitle, message: alertMesssage, preferredStyle: UIAlertController.Style.alert)
+        let alertAction = UIAlertAction(title: "Tamam", style: UIAlertAction.Style.default)
+        alertController.addAction(alertAction)
+        self.present(alertController, animated: true)
+    }
+    
+    // AnimationView Funcs
+    public func setupAnimation(_ name: String, _ animationViewName: LottieAnimationView){
+        animationViewName.animation = LottieAnimation.named(name)
+        animationViewName.backgroundColor = .systemBackground
+        animationViewName.contentMode = .scaleAspectFit
+        animationViewName.loopMode = .loop
+        animationViewName.play()
+    }
+     
 }
 
 

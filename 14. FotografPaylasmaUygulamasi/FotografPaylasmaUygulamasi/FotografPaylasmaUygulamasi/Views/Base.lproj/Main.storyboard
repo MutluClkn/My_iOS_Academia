@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FotografPaylasmaUygulamasi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" id="BYZ-38-t0r" customClass="ViewController" customModule="FotografPaylasmaUygulamasi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIg-90-qgJ">
-                                <rect key="frame" x="70" y="687" width="100" height="35"/>
+                                <rect key="frame" x="70" y="667" width="100" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="25i-4f-A92"/>
                                 </constraints>
@@ -42,7 +42,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xs-qj-Ya5">
-                                <rect key="frame" x="223" y="687" width="100" height="35"/>
+                                <rect key="frame" x="223" y="667" width="100" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="45C-tV-ZJn"/>
                                 </constraints>
@@ -56,16 +56,19 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qR6-Cc-mpP" customClass="LottieAnimationView" customModule="Lottie">
                                 <rect key="frame" x="34" y="139" width="325" height="400"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="400" id="koL-cV-Wsk"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fotoğraf Paylaşım Uygulaması" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D91-rR-i79">
-                                <rect key="frame" x="10" y="79" width="373" height="35"/>
+                                <rect key="frame" x="10" y="99" width="373" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Zv8-Li-ug1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="19"/>
+                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="33"/>
                                 <color key="textColor" red="0.29803921568627451" green="0.30980392156862746" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -78,24 +81,24 @@
                             <constraint firstItem="8Xs-qj-Ya5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZIg-90-qgJ" secondAttribute="trailing" constant="8" symbolic="YES" id="Ixr-md-0sZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qR6-Cc-mpP" secondAttribute="trailing" constant="34" id="NZg-8R-NfK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ak9-7v-wX5" secondAttribute="trailing" constant="40" id="VUc-10-fqO"/>
-                            <constraint firstItem="8Xs-qj-Ya5" firstAttribute="top" secondItem="ak9-7v-wX5" secondAttribute="bottom" constant="50" id="VWx-GI-MFb"/>
+                            <constraint firstItem="8Xs-qj-Ya5" firstAttribute="top" secondItem="ak9-7v-wX5" secondAttribute="bottom" constant="30" id="VWx-GI-MFb"/>
                             <constraint firstItem="4tL-ZH-wTT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="ZFa-xo-gAo"/>
-                            <constraint firstItem="ZIg-90-qgJ" firstAttribute="top" secondItem="ak9-7v-wX5" secondAttribute="bottom" constant="50" id="o1o-ke-Msp"/>
+                            <constraint firstItem="ZIg-90-qgJ" firstAttribute="top" secondItem="ak9-7v-wX5" secondAttribute="bottom" constant="30" id="o1o-ke-Msp"/>
                             <constraint firstItem="4tL-ZH-wTT" firstAttribute="top" secondItem="qR6-Cc-mpP" secondAttribute="bottom" constant="20" id="oQE-m2-BaO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4tL-ZH-wTT" secondAttribute="trailing" constant="40" id="qxO-lj-xrW"/>
                             <constraint firstItem="ZIg-90-qgJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="s1d-FH-Y5F"/>
-                            <constraint firstItem="D91-rR-i79" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="uXp-yP-CBl"/>
+                            <constraint firstItem="D91-rR-i79" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="uXp-yP-CBl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Xs-qj-Ya5" secondAttribute="trailing" constant="70" id="unx-UP-rXc"/>
                             <constraint firstItem="D91-rR-i79" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="vVB-8S-N12"/>
                             <constraint firstItem="ak9-7v-wX5" firstAttribute="top" secondItem="4tL-ZH-wTT" secondAttribute="bottom" constant="10" id="voK-Oc-0CG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="D91-rR-i79" secondAttribute="trailing" constant="10" id="wPU-hc-zCT"/>
-                            <constraint firstItem="qR6-Cc-mpP" firstAttribute="top" secondItem="D91-rR-i79" secondAttribute="bottom" constant="25" id="wuM-rX-QtM"/>
+                            <constraint firstItem="qR6-Cc-mpP" firstAttribute="top" secondItem="D91-rR-i79" secondAttribute="bottom" constant="5" id="wuM-rX-QtM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ts1-wO-0Qh"/>
                     <connections>
                         <outlet property="emailTextField" destination="4tL-ZH-wTT" id="gCR-XV-Kn7"/>
-                        <outlet property="loginAnimationView" destination="qR6-Cc-mpP" id="2C5-Xo-PHe"/>
+                        <outlet property="loginAnimationView" destination="qR6-Cc-mpP" id="lMj-Ez-drA"/>
                         <outlet property="passwordTextField" destination="ak9-7v-wX5" id="PjJ-Gy-vbY"/>
                         <segue destination="IYe-44-Vjb" kind="presentation" identifier="toFeedVC" modalPresentationStyle="fullScreen" id="9Xg-4h-9iP"/>
                     </connections>
@@ -114,6 +117,9 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dMn-dw-7m5" customClass="LottieAnimationView" customModule="Lottie">
                                 <rect key="frame" x="40" y="99" width="313" height="450"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="450" id="Xjw-Sx-rVf"/>
                                 </constraints>
@@ -146,7 +152,7 @@
                         <imageReference key="image" image="gearshape.fill" catalog="system" renderingMode="template"/>
                     </tabBarItem>
                     <connections>
-                        <outlet property="logOutAnimationView" destination="dMn-dw-7m5" id="WXM-75-mYp"/>
+                        <outlet property="logOutAnimationView" destination="dMn-dw-7m5" id="3ti-Ip-EUb"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="toVC" modalPresentationStyle="fullScreen" id="mGQ-Hj-u9v"/>
                     </connections>
                 </viewController>
@@ -183,7 +189,7 @@
                                     <color key="baseBackgroundColor" red="0.29803921568627451" green="0.30980392156862746" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="uploadButtonDidPress:" destination="p3W-IN-Djs" eventType="touchUpInside" id="Qgu-i7-bgr"/>
+                                    <action selector="uploadButtonDidPress:" destination="p3W-IN-Djs" eventType="touchUpInside" id="oAI-DT-LDG"/>
                                 </connections>
                             </button>
                         </subviews>
