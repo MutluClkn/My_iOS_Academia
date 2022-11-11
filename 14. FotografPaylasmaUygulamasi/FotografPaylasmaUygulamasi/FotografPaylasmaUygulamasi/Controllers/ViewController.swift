@@ -21,13 +21,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setupAnimation("LoginPage", loginAnimationView)
         
-        
-        
-        // Keyboard Hide-Show Setup
+        // View will move when keyboard show up.
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-
+    
     // Keyboard Funcs
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
@@ -55,14 +53,14 @@ class ViewController: UIViewController {
                 }
             }
         }else{
-            // Empty slot, sign in failed
+            // If sign in failed
             popUpMessage(alertTitle: "Hata", alertMesssage: "Eksik bilgi girdiniz.")
         }
     }
     
     @IBAction func registerButtonDidPress(_ sender: Any) {
         if emailTextField.text !=  "" && passwordTextField.text != "" {
-            // Register successed
+            // If register successed
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { authDataResult, error in
                 if error != nil {
                     self.popUpMessage(alertTitle: "Hata", alertMesssage: error?.localizedDescription ?? "Bu bilgilerle kayıtlı bir kullanıcı mevcut.")
@@ -72,11 +70,12 @@ class ViewController: UIViewController {
                 }
             }
         }else{
-            // Empty slot, register failed
+            // If register failed
             popUpMessage(alertTitle: "Hata", alertMesssage: "Eksik bilgi girdiniz.")
         }
     }
 }
+
 extension ViewController {
     // Pop-Up Message Setup
     public func popUpMessage(alertTitle: String, alertMesssage: String) {
@@ -94,7 +93,6 @@ extension ViewController {
         animationViewName.loopMode = .loop
         animationViewName.play()
     }
-     
 }
 
 

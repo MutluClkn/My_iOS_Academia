@@ -46,7 +46,7 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, PH
                     self.imageView.image = image
                 }
             }
-        }  // There is an error. I can not pick the first image from the gallery.
+        } // There is an error. I can not pick the first image from the gallery.
         
     }
     
@@ -57,7 +57,7 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, PH
         let storage = Storage.storage()
         let storageReference = storage.reference()
         
-        let mediaFolder = storageReference.child("media")
+        let mediaFolder = storageReference.child("Media")
         
         if let data = imageView.image?.jpegData(compressionQuality: 0.5){
             let uuid = UUID().uuidString
@@ -70,16 +70,26 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, PH
                     imageReference.downloadURL { url, error in
                         if error == nil {
                             let imageURL = url?.absoluteString
-                            print(imageURL as Any)
+                            
+                            if let imageURL = imageURL{
+                                let firestoreDatabase = Firestore.firestore()
+                                let firestorePost = ["gorselURL" : imageURL, "yorum" : self.titleTextField.text!, "tarih" : FieldValue.serverTimestamp(), "email" : Auth.auth().currentUser!.email as Any] as [String : Any]
+                                firestoreDatabase.collection("Post").addDocument(data: firestorePost){ (error) in
+                                    if error != nil {
+                                        self.popUpMessage.popUpMessage(alertTitle: "Hata", alertMesssage: error?.localizedDescription ?? "Hata meydana geldi.")
+                                    }else {
+                                        self.imageView.image = UIImage(named: "addImage")
+                                        self.titleTextField.text = ""
+                                        self.tabBarController?.selectedIndex = 0
+                                    }
+                                }
+                            }
                         }else {
                             self.popUpMessage.popUpMessage(alertTitle: "Hata", alertMesssage: error?.localizedDescription ?? "Görsel indirilemedi.")
                         }
                     }
                 }
-            } // After this process, a fatal error occurs due to hangs at LoginAnimation section.
-             
+            }
         }
-        
     }
-    
 }

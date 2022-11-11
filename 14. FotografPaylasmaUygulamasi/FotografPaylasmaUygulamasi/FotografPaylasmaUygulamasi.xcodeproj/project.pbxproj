@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA6A54CB291E3DC6009826C7 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A54CA291E3DC6009826C7 /* FeedTableViewCell.swift */; };
+		FA6A54CE291E5D73009826C7 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FA6A54CD291E5D73009826C7 /* Kingfisher */; };
+		FA6A54D3291E7374009826C7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A54D2291E7374009826C7 /* Post.swift */; };
 		FAB2339A291CC70600C6D94D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FAB23399291CC70600C6D94D /* FirebaseAuth */; };
 		FAB2339C291CC70600C6D94D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FAB2339B291CC70600C6D94D /* FirebaseFirestore */; };
 		FAB2339E291CC70600C6D94D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = FAB2339D291CC70600C6D94D /* FirebaseStorage */; };
@@ -26,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA6A54CA291E3DC6009826C7 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		FA6A54D2291E7374009826C7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		FAD75335291B646400F9CFAD /* FotografPaylasmaUygulamasi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FotografPaylasmaUygulamasi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD75338291B646400F9CFAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAD7533A291B646400F9CFAD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,12 +56,32 @@
 				FAB2339E291CC70600C6D94D /* FirebaseStorage in Frameworks */,
 				FAB2339A291CC70600C6D94D /* FirebaseAuth in Frameworks */,
 				FAB2339C291CC70600C6D94D /* FirebaseFirestore in Frameworks */,
+				FA6A54CE291E5D73009826C7 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA6A54C9291E3C39009826C7 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				FAD75343291B646600F9CFAD /* LaunchScreen.storyboard */,
+				FAD75341291B646600F9CFAD /* Assets.xcassets */,
+				FAD75338291B646400F9CFAD /* AppDelegate.swift */,
+				FAD7533A291B646400F9CFAD /* SceneDelegate.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		FA6A54D1291E7350009826C7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA6A54D2291E7374009826C7 /* Post.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		FAD7532C291B646400F9CFAD = {
 			isa = PBXGroup;
 			children = (
@@ -76,11 +101,13 @@
 		FAD75337291B646400F9CFAD /* FotografPaylasmaUygulamasi */ = {
 			isa = PBXGroup;
 			children = (
+				FAD75346291B646600F9CFAD /* Info.plist */,
+				FAD7534C291B677800F9CFAD /* GoogleService-Info.plist */,
+				FA6A54C9291E3C39009826C7 /* Misc */,
+				FA6A54D1291E7350009826C7 /* Models */,
 				FAD75362291B932300F9CFAD /* Views */,
 				FAD7535D291B92EF00F9CFAD /* Controllers */,
 				FAD7535A291B7F0900F9CFAD /* Animations */,
-				FAD75346291B646600F9CFAD /* Info.plist */,
-				FAD7534C291B677800F9CFAD /* GoogleService-Info.plist */,
 			);
 			path = FotografPaylasmaUygulamasi;
 			sourceTree = "<group>";
@@ -108,11 +135,8 @@
 		FAD75362291B932300F9CFAD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FAD75341291B646600F9CFAD /* Assets.xcassets */,
-				FAD75338291B646400F9CFAD /* AppDelegate.swift */,
-				FAD7533A291B646400F9CFAD /* SceneDelegate.swift */,
 				FAD7533E291B646400F9CFAD /* Main.storyboard */,
-				FAD75343291B646600F9CFAD /* LaunchScreen.storyboard */,
+				FA6A54CA291E3DC6009826C7 /* FeedTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -138,6 +162,7 @@
 				FAB23399291CC70600C6D94D /* FirebaseAuth */,
 				FAB2339B291CC70600C6D94D /* FirebaseFirestore */,
 				FAB2339D291CC70600C6D94D /* FirebaseStorage */,
+				FA6A54CD291E5D73009826C7 /* Kingfisher */,
 			);
 			productName = FotografPaylasmaUygulamasi;
 			productReference = FAD75335291B646400F9CFAD /* FotografPaylasmaUygulamasi.app */;
@@ -170,6 +195,7 @@
 			packageReferences = (
 				FAD75355291B7D3900F9CFAD /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				FAB23398291CC70600C6D94D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				FA6A54CC291E5D73009826C7 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = FAD75336291B646400F9CFAD /* Products */;
 			projectDirPath = "";
@@ -203,6 +229,8 @@
 			files = (
 				FAD7533D291B646400F9CFAD /* ViewController.swift in Sources */,
 				FAD75364291B936700F9CFAD /* UploadViewController.swift in Sources */,
+				FA6A54CB291E3DC6009826C7 /* FeedTableViewCell.swift in Sources */,
+				FA6A54D3291E7374009826C7 /* Post.swift in Sources */,
 				FAD75339291B646400F9CFAD /* AppDelegate.swift in Sources */,
 				FAD7535F291B930300F9CFAD /* FeedViewController.swift in Sources */,
 				FAD75361291B931300F9CFAD /* SettingsViewController.swift in Sources */,
@@ -426,6 +454,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FA6A54CC291E5D73009826C7 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		FAB23398291CC70600C6D94D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -445,6 +481,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FA6A54CD291E5D73009826C7 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA6A54CC291E5D73009826C7 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		FAB23399291CC70600C6D94D /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FAB23398291CC70600C6D94D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

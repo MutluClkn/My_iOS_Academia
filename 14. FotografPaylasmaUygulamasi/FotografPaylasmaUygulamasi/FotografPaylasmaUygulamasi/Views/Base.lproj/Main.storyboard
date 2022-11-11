@@ -177,7 +177,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bir şeyler yazın" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k28-rN-Vqc">
                                 <rect key="frame" x="20" y="449" width="353" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifI-j6-9Wh">
                                 <rect key="frame" x="145" y="523" width="103" height="40"/>
@@ -226,14 +226,68 @@
                     <view key="view" contentMode="scaleToFill" id="92b-04-ley">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="clh-0O-rQ7">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedCell" rowHeight="334" id="igK-QV-Phe" customClass="FeedTableViewCell" customModule="FotografPaylasmaUygulamasi" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="55.333332061767578" width="353" height="334"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="igK-QV-Phe" id="CCw-M6-OIf">
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CAj-Wp-hdE">
+                                                    <rect key="frame" x="20" y="21" width="313" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Açıklama" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6VJ-w3-1bl">
+                                                    <rect key="frame" x="20" y="282" width="313" height="41"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3NL-XQ-i7J">
+                                                    <rect key="frame" x="20" y="60" width="313" height="214"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3NL-XQ-i7J" firstAttribute="top" secondItem="CAj-Wp-hdE" secondAttribute="bottom" constant="8" id="7Yb-qz-kKz"/>
+                                                <constraint firstItem="3NL-XQ-i7J" firstAttribute="trailing" secondItem="CAj-Wp-hdE" secondAttribute="trailing" id="PTM-8Q-sUW"/>
+                                                <constraint firstItem="3NL-XQ-i7J" firstAttribute="centerY" secondItem="CCw-M6-OIf" secondAttribute="centerY" id="RO1-dw-UhD"/>
+                                                <constraint firstItem="3NL-XQ-i7J" firstAttribute="leading" secondItem="CAj-Wp-hdE" secondAttribute="leading" id="ned-R7-L69"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="6VJ-w3-1bl" id="5Tk-2b-DhY"/>
+                                            <outlet property="emailLabel" destination="CAj-Wp-hdE" id="ZBR-xX-txW"/>
+                                            <outlet property="postImageView" destination="3NL-XQ-i7J" id="hXc-QO-dNP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="z3P-ro-JrE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="clh-0O-rQ7" firstAttribute="top" secondItem="z3P-ro-JrE" secondAttribute="top" id="Rxt-Yq-6gM"/>
+                            <constraint firstItem="clh-0O-rQ7" firstAttribute="leading" secondItem="z3P-ro-JrE" secondAttribute="leading" id="SuD-7F-vTS"/>
+                            <constraint firstItem="clh-0O-rQ7" firstAttribute="trailing" secondItem="z3P-ro-JrE" secondAttribute="trailing" id="jUT-LN-F8C"/>
+                            <constraint firstItem="clh-0O-rQ7" firstAttribute="bottom" secondItem="z3P-ro-JrE" secondAttribute="bottom" id="xi1-Ya-Eca"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Akış" image="rectangle.grid.2x2.fill" catalog="system" id="lN8-om-2iW"/>
+                    <connections>
+                        <outlet property="tableView" destination="clh-0O-rQ7" id="AhX-wS-wzL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z72-OR-ILr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1624" y="-831"/>
+            <point key="canvasLocation" x="1623.6641221374045" y="-831.69014084507046"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hMM-q8-Awa">
