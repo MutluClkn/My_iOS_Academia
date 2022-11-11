@@ -37,10 +37,10 @@
 ### Upload Screen
 <p float="left">
 <img src="https://github.com/MutluClkn/My_iOS_Academia/blob/main/14.%20FotografPaylasmaUygulamasi/ScreenShots/UploadScreen.png " width="250">
-</p>
-<img src="https://github.com/MutluClkn/My_iOS_Academia/blob/main/14.%20FotografPaylasmaUygulamasi/ScreenShots/PickImage.gif " width="250">
+</p><img src="https://github.com/MutluClkn/My_iOS_Academia/blob/main/14.%20FotografPaylasmaUygulamasi/ScreenShots/PickImage.gif " width="250">
 
 **Reloaded feed screen after uploading a post:**
+
 <img src="https://github.com/MutluClkn/My_iOS_Academia/blob/main/14.%20FotografPaylasmaUygulamasi/ScreenShots/ReloadTableView.gif " width="250">
 
 ### Logout Screen
