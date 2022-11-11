@@ -29,7 +29,8 @@ class FeedViewController: UIViewController {
     //Firebase
     func fetchData() {
         let firestoreDatabase = Firestore.firestore()
-        firestoreDatabase.collection("Post").addSnapshotListener { snapshot, error in
+        firestoreDatabase.collection("Post").order(by: "tarih", descending: true)
+            .addSnapshotListener { snapshot, error in
             if error != nil {
                 self.popUpMessage.popUpMessage(alertTitle: "Hata", alertMesssage: error?.localizedDescription ?? "Veriler yüklenirken bir hata oluştu.")
             }else {
