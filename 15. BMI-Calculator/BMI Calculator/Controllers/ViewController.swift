@@ -12,8 +12,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var heightValueLabel: UILabel!
     @IBOutlet weak var weightValueLabel: UILabel!
-    
-    
+    @IBOutlet weak var heightSlider: UISlider!
+    @IBOutlet weak var weightSlider: UISlider!
     
     
     override func viewDidLoad() {
@@ -22,15 +22,17 @@ class ViewController: UIViewController {
     }
 
     
-    
-    
-    
-    @IBAction func heightSlider(_ sender: Any) {
-        
+    @IBAction func heightSliderChanged(_ sender: UISlider) {
+        let heightValue = String(format: "%.2f", sender.value)
+        heightValueLabel.text = "\(heightValue)m"
     }
-    @IBAction func weightSlider(_ sender: Any) {
+    @IBAction func weightSliderChanged(_ sender: UISlider) {
+        let weightValue = String(format: "%.0f", sender.value)
+        weightValueLabel.text =  "\(weightValue)kg"
     }
-    
+    @IBAction func calculateButtonDidPress(_ sender: UIButton) {
+
+    }
     
 }
 
