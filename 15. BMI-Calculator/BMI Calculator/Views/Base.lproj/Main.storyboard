@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BMI_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="BMI_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Q8-sj-ovt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,17 +131,17 @@
                         <outlet property="heightValueLabel" destination="Xcz-1j-2c9" id="KrG-IJ-N9G"/>
                         <outlet property="weightSlider" destination="s2X-C5-Zcz" id="3b5-4v-DbA"/>
                         <outlet property="weightValueLabel" destination="LTF-aL-8qu" id="qKa-zQ-a2F"/>
-                        <segue destination="lkq-xS-Cin" kind="presentation" modalPresentationStyle="fullScreen" id="K0x-E7-hf1"/>
+                        <segue destination="lkq-xS-Cin" kind="presentation" identifier="toResultVC" modalPresentationStyle="fullScreen" id="K0x-E7-hf1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="138"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="QA2-bS-5c1">
             <objects>
-                <viewController id="lkq-xS-Cin" sceneMemberID="viewController">
+                <viewController id="lkq-xS-Cin" customClass="ResultViewController" customModule="BMI_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A2l-zF-O8p">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -188,6 +188,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="recalculateDidPress:" destination="lkq-xS-Cin" eventType="touchUpInside" id="Gbb-AG-Da2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wMZ-LG-Y4P"/>
@@ -205,6 +208,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jRK-u2-FdU"/>
+                    <connections>
+                        <outlet property="adviceLabel" destination="9IV-CT-mxw" id="4Kl-fI-UEA"/>
+                        <outlet property="bmiResultLabel" destination="VU9-2W-Sd5" id="DRi-nn-8hN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fn-rV-g4l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
