@@ -11,6 +11,10 @@ It's a Body Mass Index calculator app. Based on the user’s weight and height i
 * Formatting Strings. 
 * Color literals.
 
+## How It Looks Like
+
+<img src="https://github.com/MutluClkn/My_iOS_Academia/blob/main/15.%20BMI-Calculator/GIF/BMI_GIF.gif " width="250">
+
 
 
 >This is a companion project to The App Brewery's Complete App Development Bootcamp.
