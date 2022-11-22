@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - WeatherModel
 struct WeatherModel {
     let conditionId: Int
     let cityName: String

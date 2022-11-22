@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - WeatherData
 struct WeatherData : Codable {
     let id : Int
     let name: String
