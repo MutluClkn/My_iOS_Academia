@@ -31,7 +31,15 @@ struct WeatherManager {
             
             // 3. Give the session a task,
             
-            let task = urlSession.dataTask(with: url, completionHandler: handler(data: response: error: ))
+            let task = urlSession.dataTask(with: url) { data, response, error in
+                if error != nil {
+                    print(error?.localizedDescription ?? "Handler error!")
+                    return
+                }
+                if let data{
+                    self.parseJSON(weatherData: data)
+                }
+            }
             
             // 4. Start the task.
             
@@ -39,14 +47,13 @@ struct WeatherManager {
         }
     }
     
-    func handler(data: Data?, response: URLResponse?, error: Error?){
-        if error != nil {
-            print(error?.localizedDescription ?? "Handler error!")
-        }
-        
-        if let data{
-            let dataString = String(data: data, encoding: .utf8)
-//            print(dataString as Any) // Checked if I can fetch the datas.
+    func parseJSON(weatherData: Data){
+        let decoder = JSONDecoder()
+        do{
+            let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
+            print(decodedData.weather[0].description)
+        }catch{
+            print(error.localizedDescription)
         }
     }
 }
