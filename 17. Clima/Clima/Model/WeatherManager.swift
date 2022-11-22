@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 // MARK: - WeatherManagerDelegate
 protocol WeatherManagerDelegate{
@@ -21,26 +22,29 @@ struct WeatherManager {
     let weatherURL = "https://api.openweathermap.org/data/2.5/weather?"
     
     var delegate : WeatherManagerDelegate?
-    
+
+
+//---------------------------------------------------------------------------------------------
     func fetchWeather(cityName: String){
         let urlString = "\(weatherURL)&appid=\(api_Key)&units=\(units)&q=\(cityName)"
-//      print(urlString) // Checked the result on browser search bar.
+      //print(urlString) // Checked the result on browser search bar.
         performRequest(with: urlString)
     }
-    
+
+    func fetchWeather(latitude: CLLocationDegrees, longitude: CLLocationDegrees){
+        let urlString = "\(weatherURL)&appid=\(api_Key)&units=\(units)&lat=\(latitude)&lon=\(longitude)"
+        performRequest(with: urlString)
+    }
 //---------------------------------------------------------------------------------------------
     func performRequest(with urlString: String){
         // ----  STEPS  ----
         // 1. Create a URL,
-        
         if let url = URL(string: urlString){
             
             // 2. Create a URLSession,
-            
             let urlSession = URLSession(configuration: .default)
             
             // 3. Give the session a task,
-            
             let task = urlSession.dataTask(with: url) { data, response, error in
                 if error != nil {
                     print(delegate?.didFailWithError(error: error!) as Any)
@@ -54,7 +58,6 @@ struct WeatherManager {
             }
             
             // 4. Start the task.
-            
             task.resume()
         }
     }
