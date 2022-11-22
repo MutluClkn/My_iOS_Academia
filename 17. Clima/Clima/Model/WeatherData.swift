@@ -17,6 +17,7 @@ struct WeatherData : Codable {
 }
 
 struct Weather : Codable {
+    let id : Int
     let main : String
     let description : String
 }
