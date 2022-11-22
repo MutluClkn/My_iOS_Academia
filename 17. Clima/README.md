@@ -19,4 +19,7 @@ It's a dark-mode enabled weather app. User be able to check the weather for the 
 
 ## How It Looks Like
 
+<img src="https://github.com/MutluClkn/My_iOS_Academia/blob/main/17.%20Clima/Documentation/GIF_1.gif " width="250">
+<img src="https://github.com/MutluClkn/My_iOS_Academia/blob/main/17.%20Clima/Documentation/GIF_2.gif " width="250">
+
 >This is a companion project to The App Brewery's Complete App Development Bootcamp.
