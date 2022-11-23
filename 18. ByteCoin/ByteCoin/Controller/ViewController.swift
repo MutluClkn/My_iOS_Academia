@@ -8,24 +8,24 @@
 
 import UIKit
 
+// MARK: - ViewController
 class ViewController: UIViewController {
 
     @IBOutlet weak var bitcoinLabel: UILabel!
     @IBOutlet weak var currencyLabel: UILabel!
     @IBOutlet weak var currencyPicker: UIPickerView!
     
-    let coinManager = CoinManager()
+    var coinManager = CoinManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        coinManager.coinManagerDelegate = self
         currencyPicker.delegate = self
         currencyPicker.dataSource = self
     }
-
-
 }
 
+// MARK: - UIPickerViewDataSource
 extension ViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -36,6 +36,7 @@ extension ViewController: UIPickerViewDataSource {
     }
 }
 
+// MARK: - UIPickerViewDelegate
 extension ViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return coinManager.currencyArray[row]
@@ -45,5 +46,21 @@ extension ViewController: UIPickerViewDelegate {
         let currency = coinManager.currencyArray[row]
         coinManager.getCoinPrice(for: currency)
     }
+}
+
+// MARK: - VC CoinManagerDelegate
+extension ViewController: CoinManagerDelegate {
+    func didUpdateCoinValue(_ coinManager: CoinManager, coinModel: CoinModel) {
+        DispatchQueue.main.async {
+            self.bitcoinLabel.text = coinModel.bitcoinRateString
+            self.currencyLabel.text = coinModel.currency
+        }
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error.localizedDescription)
+    }
+    
+    
 }
 

@@ -8,6 +8,12 @@
 
 import Foundation
 
+// MARK: - Coin Manager Delegate Protocol
+protocol CoinManagerDelegate{
+    func didUpdateCoinValue(_ coinManager : CoinManager, coinModel: CoinModel)
+    func didFailWithError(error: Error)
+}
+
 struct CoinManager {
     
     let baseURL = "https://rest.coinapi.io/v1/exchangerate/BTC"
@@ -15,6 +21,9 @@ struct CoinManager {
     
     let currencyArray = ["AUD", "BRL","CAD","CNY","EUR","GBP","HKD","IDR","ILS","INR","JPY","MXN","NOK","NZD","PLN","RON","RUB","SEK","SGD","USD","ZAR"]
 
+    var coinManagerDelegate : CoinManagerDelegate?
+    
+    // MARK: - Get Coin Price
     func getCoinPrice(for currency: String){
         let urlString = "\(baseURL)/\(currency)?apikey=\(apiKey)"
         
@@ -26,22 +35,25 @@ struct CoinManager {
                     return
                 }
                 if let data{
-                    let bitcoinPrice = self.parseJSON(data)
+                    if let bitcoinPrice = self.parseJSON(coinData: data, currency: currency){
+                        self.coinManagerDelegate?.didUpdateCoinValue(self, coinModel: bitcoinPrice)
+                    }
                 }
             }
             task.resume()
         }
     }
     
-    func parseJSON(_ data: Data) -> Double?{
+    // MARK: - Parse JSON
+    func parseJSON(coinData: Data, currency: String) -> CoinModel?{
         let decoder = JSONDecoder()
         do{
-            let decodedData = try decoder.decode(CoinData.self, from: data)
-            let lastPrice = decodedData.rate
-            print(lastPrice)
+            let decodedData = try decoder.decode(CoinData.self, from: coinData)
+            let rate = decodedData.rate
+            let lastPrice = CoinModel(bitcoinRate: rate, currency: currency)
             return lastPrice
         }catch{
-            print(error.localizedDescription)
+            print(coinManagerDelegate?.didFailWithError(error: error) as Any)
             return nil
         }
     }
