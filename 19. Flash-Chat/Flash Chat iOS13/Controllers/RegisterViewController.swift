@@ -14,6 +14,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     
+    
     //MARK: - Register a new user
     @IBAction func registerPressed(_ sender: UIButton) {
         if let email = emailTextfield.text, let password = passwordTextfield.text {
@@ -25,15 +26,5 @@ class RegisterViewController: UIViewController {
                 }
             }
         }
-    }
-    
-
-    //MARK: - UIAlertController
-    func alertMessage(alertTitle: String, alertMesssage: String) {
-        let alertController = UIAlertController(title: alertTitle, message: alertMesssage, preferredStyle: UIAlertController.Style.alert)
-        let alertAction = UIAlertAction(title: "Okay", style: UIAlertAction.Style.default)
-        alertController.addAction(alertAction)
-        self.present(alertController, animated: true)
-        
     }
 }

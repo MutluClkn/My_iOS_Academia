@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25611,6 +25611,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		14721AF254688FE880C4C7495D0FDAA3 /* Create Symlinks to Header Folders */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -25629,6 +25630,7 @@
 		};
 		1D370502346454157E27C7D43F4073C6 /* Create Symlinks to Header Folders */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -25647,6 +25649,7 @@
 		};
 		803A2ADFA3D64086E11CFEFC4C6CFBD9 /* Create Symlinks to Header Folders */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -25665,6 +25668,7 @@
 		};
 		A91C4131DE64CC14506B4DCA82994411 /* Create Symlinks to Header Folders */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -25683,6 +25687,7 @@
 		};
 		D9F342D85EB667C3BC050B10DA2E2D34 /* Create Symlinks to Header Folders */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
