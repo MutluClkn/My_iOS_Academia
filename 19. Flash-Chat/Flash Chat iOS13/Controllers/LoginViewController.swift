@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
     
 
     @IBAction func loginPressed(_ sender: UIButton) {
-        
+
         let alertController = UIAlertController(title: nil, message: "Please wait\n\n", preferredStyle: .alert)
         let spinnerIndicator = UIActivityIndicatorView(style: .large)
         spinnerIndicator.center = CGPoint(x: 135.0, y: 65.5)
@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
         spinnerIndicator.startAnimating()
         alertController.view.addSubview(spinnerIndicator)
         self.present(alertController, animated: false, completion: nil)
-        
+
         if let email = emailTextfield.text, let password = passwordTextfield.text{
             Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
                 
@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
                     self.alertMessage(alertTitle: "Error!", alertMesssage: error?.localizedDescription ?? "An error occured while login.")
                 }else{
                     alertController.dismiss(animated: true, completion: nil);
-                    self.performSegue(withIdentifier: "LoginToChat", sender: self)
+                    self.performSegue(withIdentifier: K.loginSegue, sender: self)
                 }
             }
         }

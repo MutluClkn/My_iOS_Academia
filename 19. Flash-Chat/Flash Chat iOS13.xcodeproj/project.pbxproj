@@ -20,7 +20,7 @@
 		FA5BF586292F6B0600D98484 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA5BF585292F6B0600D98484 /* GoogleService-Info.plist */; };
 		FA5BF588292F9C3100D98484 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BF587292F9C3100D98484 /* AlertMessage.swift */; };
 		FA5BF58C292FA06400D98484 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BF58B292FA06400D98484 /* ChatViewController.swift */; };
-		FA5BF58F292FA48900D98484 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BF58E292FA48900D98484 /* LoadingIndicator.swift */; };
+		FA5BF594292FBF5D00D98484 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BF593292FBF5D00D98484 /* K.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +41,7 @@
 		FA5BF585292F6B0600D98484 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA5BF587292F9C3100D98484 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		FA5BF58B292FA06400D98484 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		FA5BF58E292FA48900D98484 /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
+		FA5BF593292FBF5D00D98484 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +78,7 @@
 		0B628175235DEE8100E35CAF /* Flash Chat iOS13 */ = {
 			isa = PBXGroup;
 			children = (
+				FA5BF592292FBF4A00D98484 /* Constants */,
 				FA5BF58D292FA42C00D98484 /* Extensions */,
 				FA5BF580292F297400D98484 /* Misc */,
 				FA5BF57F292F296700D98484 /* Models */,
@@ -147,9 +148,16 @@
 			isa = PBXGroup;
 			children = (
 				FA5BF587292F9C3100D98484 /* AlertMessage.swift */,
-				FA5BF58E292FA48900D98484 /* LoadingIndicator.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FA5BF592292FBF4A00D98484 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				FA5BF593292FBF5D00D98484 /* K.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,8 +281,8 @@
 				0B628177235DEE8100E35CAF /* AppDelegate.swift in Sources */,
 				0B628179235DEE8100E35CAF /* SceneDelegate.swift in Sources */,
 				FA5BF58C292FA06400D98484 /* ChatViewController.swift in Sources */,
-				FA5BF58F292FA48900D98484 /* LoadingIndicator.swift in Sources */,
 				0B62818F235DF01000E35CAF /* LoginViewController.swift in Sources */,
+				FA5BF594292FBF5D00D98484 /* K.swift in Sources */,
 				0B62818D235DF00B00E35CAF /* RegisterViewController.swift in Sources */,
 				FA5BF588292F9C3100D98484 /* AlertMessage.swift in Sources */,
 			);
