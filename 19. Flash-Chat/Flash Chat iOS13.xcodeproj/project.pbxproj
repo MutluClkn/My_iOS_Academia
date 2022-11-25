@@ -20,10 +20,12 @@
 		FA5BF586292F6B0600D98484 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA5BF585292F6B0600D98484 /* GoogleService-Info.plist */; };
 		FA5BF588292F9C3100D98484 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BF587292F9C3100D98484 /* AlertMessage.swift */; };
 		FA5BF58C292FA06400D98484 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BF58B292FA06400D98484 /* ChatViewController.swift */; };
-		FA5BF594292FBF5D00D98484 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BF593292FBF5D00D98484 /* K.swift */; };
+		FA5BF594292FBF5D00D98484 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BF593292FBF5D00D98484 /* Core.swift */; };
 		FA9BC6E42930706200E42C89 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BC6E32930706200E42C89 /* Messages.swift */; };
 		FA9BC6E7293073B400E42C89 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BC6E5293073B400E42C89 /* MessageCell.swift */; };
 		FA9BC6E8293073B400E42C89 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9BC6E6293073B400E42C89 /* MessageCell.xib */; };
+		FA9BC6EA29309EF800E42C89 /* BrandColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BC6E929309EF800E42C89 /* BrandColors.swift */; };
+		FA9BC6EC29309F0900E42C89 /* FStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BC6EB29309F0900E42C89 /* FStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,10 +46,12 @@
 		FA5BF585292F6B0600D98484 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA5BF587292F9C3100D98484 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		FA5BF58B292FA06400D98484 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		FA5BF593292FBF5D00D98484 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		FA5BF593292FBF5D00D98484 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		FA9BC6E32930706200E42C89 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		FA9BC6E5293073B400E42C89 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		FA9BC6E6293073B400E42C89 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		FA9BC6E929309EF800E42C89 /* BrandColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandColors.swift; sourceTree = "<group>"; };
+		FA9BC6EB29309F0900E42C89 /* FStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +168,9 @@
 		FA5BF592292FBF4A00D98484 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				FA5BF593292FBF5D00D98484 /* K.swift */,
+				FA5BF593292FBF5D00D98484 /* Core.swift */,
+				FA9BC6E929309EF800E42C89 /* BrandColors.swift */,
+				FA9BC6EB29309F0900E42C89 /* FStore.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -290,11 +296,13 @@
 				0B62818B235DF00000E35CAF /* WelcomeViewController.swift in Sources */,
 				FA9BC6E7293073B400E42C89 /* MessageCell.swift in Sources */,
 				FA9BC6E42930706200E42C89 /* Messages.swift in Sources */,
+				FA9BC6EA29309EF800E42C89 /* BrandColors.swift in Sources */,
 				0B628177235DEE8100E35CAF /* AppDelegate.swift in Sources */,
 				0B628179235DEE8100E35CAF /* SceneDelegate.swift in Sources */,
+				FA9BC6EC29309F0900E42C89 /* FStore.swift in Sources */,
 				FA5BF58C292FA06400D98484 /* ChatViewController.swift in Sources */,
 				0B62818F235DF01000E35CAF /* LoginViewController.swift in Sources */,
-				FA5BF594292FBF5D00D98484 /* K.swift in Sources */,
+				FA5BF594292FBF5D00D98484 /* Core.swift in Sources */,
 				0B62818D235DF00B00E35CAF /* RegisterViewController.swift in Sources */,
 				FA5BF588292F9C3100D98484 /* AlertMessage.swift in Sources */,
 			);

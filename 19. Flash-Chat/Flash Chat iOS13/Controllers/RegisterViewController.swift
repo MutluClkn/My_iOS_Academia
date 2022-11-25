@@ -33,7 +33,7 @@ class RegisterViewController: UIViewController {
                     self.alertMessage(alertTitle: "Error!", alertMesssage: error?.localizedDescription ?? "Occured an error while creating a new user.")
                 }else{
                     alertController.dismiss(animated: true, completion: nil);
-                    self.performSegue(withIdentifier: K.registerSegue, sender: self)
+                    self.performSegue(withIdentifier: Core.registerSegue, sender: self)
                 }
             }
         }

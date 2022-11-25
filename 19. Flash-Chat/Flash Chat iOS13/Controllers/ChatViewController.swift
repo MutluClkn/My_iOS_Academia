@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class ChatViewController: UIViewController {
     
@@ -19,21 +20,59 @@ class ChatViewController: UIViewController {
         Messages(sender: "111@2.com", body: "What's up")
     ]
     
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = K.appName
+        title = Core.appName
         navigationItem.hidesBackButton = true
         
         // Tableview
         tableView.dataSource = self
-        tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
+        tableView.register(UINib(nibName: Core.cellNibName, bundle: nil), forCellReuseIdentifier: Core.cellIdentifier)
+    
+        loadMessages()
         
     }
     
     
     @IBAction func sendPressed(_ sender: UIButton) {
+        if let messageBox = messageTextField.text, let messageSender = Auth.auth().currentUser?.email {
+            db.collection(FStore.collectionName).addDocument(data: [
+                FStore.senderField: messageSender,
+                FStore.bodyField: messageBox,
+                FStore.dateField: FieldValue.serverTimestamp()
+            ]){ error in
+                if let error {
+                    self.alertMessage(alertTitle: "Error!", alertMesssage: error.localizedDescription)
+                }
+            }
+        }
+        messageTextField.text = ""
+    }
+    
+    func loadMessages(){
+        db.collection(FStore.collectionName).order(by: FStore.dateField).addSnapshotListener { querySnapshot, error in
+            self.messages = []
+            if let error {
+                self.alertMessage(alertTitle: "Error!", alertMesssage: error.localizedDescription)
+            }else{
+                if let documents = querySnapshot?.documents{
+                    for doc in documents{
+                        let data = doc.data()
+                        if let sender = data[FStore.senderField] as? String, let message = data[FStore.bodyField] as? String{
+                            let newMessage = Messages(sender: sender, body: message)
+                            self.messages.append(newMessage)
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
     }
     
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
@@ -49,11 +88,11 @@ class ChatViewController: UIViewController {
 extension ChatViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as? MessageCell else { return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Core.cellIdentifier, for: indexPath) as? MessageCell else { return UITableViewCell()
         }
         cell.label.text = messages[indexPath.row].body
         return cell

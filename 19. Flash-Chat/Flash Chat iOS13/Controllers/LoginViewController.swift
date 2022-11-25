@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
                     self.alertMessage(alertTitle: "Error!", alertMesssage: error?.localizedDescription ?? "An error occured while login.")
                 }else{
                     alertController.dismiss(animated: true, completion: nil);
-                    self.performSegue(withIdentifier: K.loginSegue, sender: self)
+                    self.performSegue(withIdentifier: Core.loginSegue, sender: self)
                 }
             }
         }
