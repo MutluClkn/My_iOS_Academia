@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     
-
+    //MARK: - Login Button
     @IBAction func loginPressed(_ sender: UIButton) {
 
         let alertController = UIAlertController(title: nil, message: "Please wait\n\n", preferredStyle: .alert)

@@ -15,17 +15,12 @@ class ChatViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageTextField: UITextField!
     
-    var messages : [Messages] = [
-        Messages(sender: "1@2.com", body: "Hey"),
-        Messages(sender: "111@2.com", body: "What's up")
-    ]
-    
+    var messages : [Messages] = []
     let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = Core.appName
+
         navigationItem.hidesBackButton = true
         
         // Tableview
@@ -37,21 +32,7 @@ class ChatViewController: UIViewController {
     }
     
     
-    @IBAction func sendPressed(_ sender: UIButton) {
-        if let messageBox = messageTextField.text, let messageSender = Auth.auth().currentUser?.email {
-            db.collection(FStore.collectionName).addDocument(data: [
-                FStore.senderField: messageSender,
-                FStore.bodyField: messageBox,
-                FStore.dateField: FieldValue.serverTimestamp()
-            ]){ error in
-                if let error {
-                    self.alertMessage(alertTitle: "Error!", alertMesssage: error.localizedDescription)
-                }
-            }
-        }
-        messageTextField.text = ""
-    }
-    
+    //MARK: - Load Messages
     func loadMessages(){
         db.collection(FStore.collectionName).order(by: FStore.dateField).addSnapshotListener { querySnapshot, error in
             self.messages = []
@@ -66,15 +47,36 @@ class ChatViewController: UIViewController {
                             self.messages.append(newMessage)
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
+                                let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+                                self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
                             }
                         }
                     }
-                    
                 }
             }
         }
     }
     
+    //MARK: - Send Button
+    @IBAction func sendPressed(_ sender: UIButton) {
+        if let messageBox = messageTextField.text, let messageSender = Auth.auth().currentUser?.email {
+            db.collection(FStore.collectionName).addDocument(data: [
+                FStore.senderField: messageSender,
+                FStore.bodyField: messageBox,
+                FStore.dateField: FieldValue.serverTimestamp()
+            ]){ error in
+                if let error {
+                    self.alertMessage(alertTitle: "Error!", alertMesssage: error.localizedDescription)
+                }else{
+                    DispatchQueue.main.async {
+                        self.messageTextField.text = ""
+                    }
+                }
+            }
+        }
+    }
+    
+    //MARK: - Log Out Button
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
         do {
             try Auth.auth().signOut()
@@ -85,6 +87,7 @@ class ChatViewController: UIViewController {
     }
 }
 
+// MARK: - UITableViewDataSource
 extension ChatViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

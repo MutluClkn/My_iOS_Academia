@@ -17,9 +17,18 @@ Flash Chat is an internet based messaging app similar to WhatsApp, the popular m
 * How to create direct Segues for navigation.
 
 ##
+### Welcome Screen
+<img src="https://github.com/MutluClkn/My_iOS_Academia/blob/main/19.%20Flash-Chat/Documentation/Welcome.gif " width="250">
 
+### Login To Different Accounts
+<img src="https://github.com/MutluClkn/My_iOS_Academia/blob/main/19.%20Flash-Chat/Documentation/Login.gif " width="250"><img src="https://github.com/MutluClkn/My_iOS_Academia/blob/main/19.%20Flash-Chat/Documentation/Login2.gif " width="250">
+
+### Chat Screen
 <p float="left">
 <img src="https://github.com/MutluClkn/My_iOS_Academia/blob/main/19.%20Flash-Chat/Documentation/Chat.png " width="250">
-</p><img src="https://github.com/MutluClkn/My_iOS_Academia/blob/main/19.%20Flash-Chat/Documentation/GIF.gif " width="250">
+</p>
+
+### Register Screen
+<img src="https://github.com/MutluClkn/My_iOS_Academia/blob/main/19.%20Flash-Chat/Documentation/RegisterErrors.gif " width="250"><img src="https://github.com/MutluClkn/My_iOS_Academia/blob/main/19.%20Flash-Chat/Documentation/Register.gif " width="250">
 
 >This is a companion project to The App Brewery's Complete App Developement Bootcamp.
