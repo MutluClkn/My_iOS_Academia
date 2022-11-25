@@ -18,6 +18,8 @@ Flash Chat is an internet based messaging app similar to WhatsApp, the popular m
 
 ##
 
-<img src="https://github.com/MutluClkn/My_iOS_Academia/blob/main/19.%20Flash-Chat/Documentation/GIF.gif " width="250">
+<p float="left">
+<img src="https://github.com/MutluClkn/My_iOS_Academia/blob/main/19.%20Flash-Chat/Documentation/Chat.png " width="250">
+</p><img src="https://github.com/MutluClkn/My_iOS_Academia/blob/main/19.%20Flash-Chat/Documentation/GIF.gif " width="250">
 
 >This is a companion project to The App Brewery's Complete App Developement Bootcamp.
