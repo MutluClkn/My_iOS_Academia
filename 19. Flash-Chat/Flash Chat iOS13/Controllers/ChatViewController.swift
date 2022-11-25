@@ -32,8 +32,8 @@ class ChatViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: Core.cellNibName, bundle: nil), forCellReuseIdentifier: Core.cellIdentifier)
     
+        // Fetch data from Firestore and display them on the chat screen.
         loadMessages()
-        
     }
     
     
