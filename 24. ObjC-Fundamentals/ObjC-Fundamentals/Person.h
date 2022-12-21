@@ -26,4 +26,8 @@
 @property NSString *name;
 
 
+//MARK: - Initializer
+- (instancetype) initWithName: (NSString *) name;
+
+
 @end

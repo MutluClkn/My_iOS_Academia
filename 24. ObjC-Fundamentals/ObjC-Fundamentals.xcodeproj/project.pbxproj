@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FAE800592952E4D900DBA2DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE800582952E4D900DBA2DF /* main.m */; };
 		FAE800612952ECDE00DBA2DF /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE800602952ECDE00DBA2DF /* Person.m */; };
+		FAE800642953334F00DBA2DF /* Fellow.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE800632953334F00DBA2DF /* Fellow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		FAE800582952E4D900DBA2DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FAE8005F2952ECDE00DBA2DF /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		FAE800602952ECDE00DBA2DF /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		FAE800622953334F00DBA2DF /* Fellow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Fellow.h; sourceTree = "<group>"; };
+		FAE800632953334F00DBA2DF /* Fellow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Fellow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				FAE800582952E4D900DBA2DF /* main.m */,
+				FAE800622953334F00DBA2DF /* Fellow.h */,
+				FAE800632953334F00DBA2DF /* Fellow.m */,
 				FAE8005F2952ECDE00DBA2DF /* Person.h */,
 				FAE800602952ECDE00DBA2DF /* Person.m */,
 			);
@@ -124,6 +129,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE800642953334F00DBA2DF /* Fellow.m in Sources */,
 				FAE800612952ECDE00DBA2DF /* Person.m in Sources */,
 				FAE800592952E4D900DBA2DF /* main.m in Sources */,
 			);

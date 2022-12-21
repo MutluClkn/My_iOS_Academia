@@ -10,9 +10,8 @@
 
 @implementation Person
 
-//We implement the method created in the header file.
-
-//Class method
+//Implement the method created in the header file.
+//MARK: - Class method
 + (NSArray *)allPeople{
     Person *ahmet = [[Person alloc] init];
     ahmet.name = @"Ahmet";
@@ -24,8 +23,25 @@
     return people;
 }
 
-//Instance method
+//MARK: - Instance method
 - (void)info{
-    NSLog(@"This is a person.");
+//Changed this -> NSLog(@"This is a person.");
+//Into this:
+    NSLog(@"The person's name is %@.",self.name);
 }
+
+//MARK: - Initializer
+//Swift Example:
+//init(frame:CGRect){
+//  super.init(frame:frame)
+//}
+- (instancetype)initWithName:(NSString *)name{
+    if (self = [super init]) {
+        //initializer properties
+        self.name = name;
+    }
+    return self;
+}
+
+
 @end

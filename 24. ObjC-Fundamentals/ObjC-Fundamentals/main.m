@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 //(Swift) import Foundation
 #import "Person.h" //Everytime implement the header file (.h)
+#import "Fellow.h"
 
 //MARK: - Creating Function
 //(Swift) Creating a Function in Swift
@@ -117,6 +118,19 @@ int main(int argc, const char * argv[]) {
         //Call the first person of the array
         Person *firstPerson = people[0];
         NSLog(@"The first person is %@.", firstPerson.name);
+        
+        
+        //MARK: - Initializer
+        //Used the initializer created in the Person file.
+        Person *alex = [[Person alloc] initWithName:@"Alex"];
+        [alex info];
+        
+        
+        //MARK: - Inheritance
+        Fellow *tom = [[Fellow alloc] initWithName:@"Tom"]; //Inherits from Person.
+        [tom info]; //Overrided info will print 'The fellow's name is'.
+        
+        
     }
     return 0;
 }
