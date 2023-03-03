@@ -2,12 +2,13 @@
 //  Order.swift
 //  iDine
 //
-//  Created by Paul Hudson on 27/06/2019.
-//  Copyright © 2019 Hacking with Swift. All rights reserved.
+//  Created by Mutlu Çalkan on 27.02.2023.
 //
 
+//MARK: - Frameworks
 import SwiftUI
 
+//MARK: - Order
 class Order: ObservableObject {
     @Published var items = [MenuItem]()
 

@@ -5,8 +5,10 @@
 //  Created by Mutlu Çalkan on 28.02.2023.
 //
 
+//MARK: - Frameworks
 import SwiftUI
 
+//MARK: - ItemRow
 struct ItemRow: View {
     let item: MenuItem
     
@@ -42,6 +44,7 @@ struct ItemRow: View {
     }
 }
 
+//MARK: - ItemRow_Previews
 struct ItemRow_Previews: PreviewProvider {
     static var previews: some View {
         ItemRow(item: MenuItem.example)

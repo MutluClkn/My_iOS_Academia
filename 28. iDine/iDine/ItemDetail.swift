@@ -5,8 +5,10 @@
 //  Created by Mutlu Çalkan on 1.03.2023.
 //
 
+//MARK: - Frameworks
 import SwiftUI
 
+//MARK: - ItemDetail
 struct ItemDetail: View {
     let item : MenuItem
     
@@ -34,10 +36,11 @@ struct ItemDetail: View {
     }
 }
 
+//MARK: - ItemDetail_Previews
 struct ItemDetail_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack{
             ItemDetail(item: MenuItem.example)
-        }.accentco
+        }
     }
 }
