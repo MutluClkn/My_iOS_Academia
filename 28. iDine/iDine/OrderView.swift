@@ -5,8 +5,10 @@
 //  Created by Mutlu Çalkan on 3.03.2023.
 //
 
+//MARK: - Frameworks
 import SwiftUI
 
+//MARK: - OrderView
 struct OrderView: View {
     
     @EnvironmentObject var order : Order
@@ -35,6 +37,7 @@ struct OrderView: View {
     }
 }
 
+//MARK: - OrderView_Previews
 struct OrderView_Previews: PreviewProvider {
     static var previews: some View {
         OrderView()
