@@ -5,7 +5,7 @@
 //  Created by Mutlu Çalkan on 28.02.2023.
 //
 
-//MARK: - Frameworks
+//MARK: - Libraries
 import SwiftUI
 
 //MARK: - ItemRow

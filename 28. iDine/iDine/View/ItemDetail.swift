@@ -5,7 +5,7 @@
 //  Created by Mutlu Çalkan on 1.03.2023.
 //
 
-//MARK: - Frameworks
+//MARK: - Libraries
 import SwiftUI
 
 //MARK: - ItemDetail

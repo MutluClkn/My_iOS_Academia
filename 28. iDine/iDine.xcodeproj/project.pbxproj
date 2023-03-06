@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0E56EA29B5D75F000ADD82 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E56E929B5D75F000ADD82 /* CheckoutView.swift */; };
 		FA68AC4229ACB87300138859 /* iDineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68AC4129ACB87300138859 /* iDineApp.swift */; };
 		FA68AC4429ACB87300138859 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68AC4329ACB87300138859 /* ContentView.swift */; };
 		FA68AC4629ACB87400138859 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA68AC4529ACB87400138859 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA0E56E929B5D75F000ADD82 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		FA68AC3E29ACB87300138859 /* iDine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA68AC4129ACB87300138859 /* iDineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iDineApp.swift; sourceTree = "<group>"; };
 		FA68AC4329ACB87300138859 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +50,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA0E56EB29B5D81B000ADD82 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FA68AC5229ACB92900138859 /* Order.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FA0E56EC29B5D822000ADD82 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA68AC4329ACB87300138859 /* ContentView.swift */,
+				FAA9AC5B29AF6871000C5C0E /* ItemDetail.swift */,
+				FAA9973629B1E81500A574DC /* OrderView.swift */,
+				FA0E56E929B5D75F000ADD82 /* CheckoutView.swift */,
+				FAA9973829B1F44600A574DC /* MainView.swift */,
+				FAC0CD5F29AE1DC7004DE934 /* ItemRow.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA0E56ED29B5D828000ADD82 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA68AC5129ACB92900138859 /* Menu.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FA0E56EE29B5D831000ADD82 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA68AC4529ACB87400138859 /* Assets.xcassets */,
+				FA68AC4129ACB87300138859 /* iDineApp.swift */,
+				FA68AC4F29ACB8E000138859 /* Helper.swift */,
+				FA68AC5529ACB93C00138859 /* menu.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		FA68AC3529ACB87300138859 = {
 			isa = PBXGroup;
 			children = (
@@ -67,17 +109,10 @@
 		FA68AC4029ACB87300138859 /* iDine */ = {
 			isa = PBXGroup;
 			children = (
-				FA68AC4129ACB87300138859 /* iDineApp.swift */,
-				FA68AC4329ACB87300138859 /* ContentView.swift */,
-				FAA9AC5B29AF6871000C5C0E /* ItemDetail.swift */,
-				FAA9973629B1E81500A574DC /* OrderView.swift */,
-				FAA9973829B1F44600A574DC /* MainView.swift */,
-				FAC0CD5F29AE1DC7004DE934 /* ItemRow.swift */,
-				FA68AC5129ACB92900138859 /* Menu.swift */,
-				FA68AC5229ACB92900138859 /* Order.swift */,
-				FA68AC4F29ACB8E000138859 /* Helper.swift */,
-				FA68AC5529ACB93C00138859 /* menu.json */,
-				FA68AC4529ACB87400138859 /* Assets.xcassets */,
+				FA0E56EE29B5D831000ADD82 /* Resources */,
+				FA0E56ED29B5D828000ADD82 /* Model */,
+				FA0E56EC29B5D822000ADD82 /* View */,
+				FA0E56EB29B5D81B000ADD82 /* ViewModel */,
 				FA68AC4729ACB87400138859 /* Preview Content */,
 			);
 			path = iDine;
@@ -164,6 +199,7 @@
 			files = (
 				FAA9AC5C29AF6871000C5C0E /* ItemDetail.swift in Sources */,
 				FAA9973929B1F44600A574DC /* MainView.swift in Sources */,
+				FA0E56EA29B5D75F000ADD82 /* CheckoutView.swift in Sources */,
 				FAA9973729B1E81500A574DC /* OrderView.swift in Sources */,
 				FA68AC4429ACB87300138859 /* ContentView.swift in Sources */,
 				FA68AC4229ACB87300138859 /* iDineApp.swift in Sources */,
